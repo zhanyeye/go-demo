@@ -1,7 +1,5 @@
 FROM alpine
-WORKDIR /root
-COPY ./hello /root/
-RUN apk add bash
-RUN chmod +x hello
+WORKDIR /root/
+ADD main /root/
 EXPOSE 8000
-CMD [ "./hello" ]
+ENTRYPOINT ["./main"]
